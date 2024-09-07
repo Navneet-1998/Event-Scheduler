@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { SnackbarProvider } from "notistack";
+import CalendarComponent from "./components/calender";
+
+export const config = {
+  endpoint: `https://event-scheduler-backend-of0t.onrender.com/calendar`,
+};
 
 function App() {
   return (
+    <SnackbarProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <CalendarComponent/>
     </div>
+    </SnackbarProvider>
   );
 }
 
